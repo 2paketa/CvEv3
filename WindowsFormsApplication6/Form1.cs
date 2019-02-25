@@ -16,7 +16,7 @@ namespace WindowsFormsApplication6
         string text = "";
         string field = "";
         string[] domain = { "Legal", "Financial", "Medical" };
-        string[] legDoc = { "contracts", "bylaws", "directives" };
+        string[] legDoc = { "contracts", "Bylaws", "directives" };
         string[] finDoc = { "annual reports", "balance sheets" };
         string[] medDoc = { "SPC's", "PIL's", "clinical trials" };
         public Form1()
