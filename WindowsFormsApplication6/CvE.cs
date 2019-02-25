@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication6
+namespace CvEv3
 {
-    public partial class Form1 : Form
+    public partial class CvE : Form
     {
         Random Rand = new Random();
         string text = "";
@@ -19,12 +19,11 @@ namespace WindowsFormsApplication6
         string[] legDoc = { "contracts", "bylaws", "directives" };
         string[] finDoc = { "annual reports", "balance sheets" };
         string[] medDoc = { "SPC's", "PIL's", "clinical trials" };
-        public Form1()
+        public CvE()
         {
             InitializeComponent();
-            
         }
-        public string fieldRandomizer()
+        public string domainRandomizer()
         {
             string randomDomain = domain[Rand.Next(0, domain.Length)];
             return randomDomain;
@@ -33,7 +32,7 @@ namespace WindowsFormsApplication6
         {
             int i = 0;
             string randomDocList = "";
-            while (i < docList.Length)
+            while (i < 3)
             {
                 i = i + 1;
                 string randomDoc = docList[Rand.Next(0, docList.Length)];
@@ -53,9 +52,9 @@ namespace WindowsFormsApplication6
             randomDocList = randomDocList + ")";
             return randomDocList;
         }
-        public string insDocs() // checks domain value and inserts associated documents
+        public string insDocs() // checks domain and inserts paired documents
         {
-            text = fieldRandomizer();
+            text = domainRandomizer();
             field = text;
             Dictionary<string, string[]> CategorizeDocs = new Dictionary<string, string[]>();
             CategorizeDocs.Add(domain[0], legDoc);

@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApplication6
+﻿namespace CvEv3
 {
-    partial class Form1
+    partial class CvE
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CvE));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.legCheckBox = new System.Windows.Forms.CheckBox();
@@ -83,7 +84,7 @@
             this.medCheckBox.Text = "Medical";
             this.medCheckBox.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // CvE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,8 +94,9 @@
             this.Controls.Add(this.legCheckBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CvE";
+            this.Text = "CvE";
             this.ResumeLayout(false);
             this.PerformLayout();
 
