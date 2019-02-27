@@ -20,7 +20,7 @@ namespace CvEv3
         string text = "";
         string field = "";
         string[] domain = { "Legal", "Financial", "Medical" };
-        string[] legDoc = { "contracts", "bylaws", "directives" };
+        string[] legDoc = { "contracts", "bylaws", "Directives" };
         string[] finDoc = { "annual reports", "balance sheets" };
         string[] medDoc = { "SPC's", "PIL's", "clinical trials" };
         bool chkdBoxes = false;
