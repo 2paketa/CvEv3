@@ -34,6 +34,7 @@
             this.legCheckBox = new System.Windows.Forms.CheckBox();
             this.finCheckBox = new System.Windows.Forms.CheckBox();
             this.medCheckBox = new System.Windows.Forms.CheckBox();
+            this.markCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -61,6 +62,7 @@
             this.legCheckBox.Name = "legCheckBox";
             this.legCheckBox.Size = new System.Drawing.Size(52, 17);
             this.legCheckBox.TabIndex = 2;
+            this.legCheckBox.Tag = "";
             this.legCheckBox.Text = "Legal";
             this.legCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -84,11 +86,22 @@
             this.medCheckBox.Text = "Medical";
             this.medCheckBox.UseVisualStyleBackColor = true;
             // 
+            // markCheckBox
+            // 
+            this.markCheckBox.AutoSize = true;
+            this.markCheckBox.Location = new System.Drawing.Point(12, 150);
+            this.markCheckBox.Name = "markCheckBox";
+            this.markCheckBox.Size = new System.Drawing.Size(73, 17);
+            this.markCheckBox.TabIndex = 5;
+            this.markCheckBox.Text = "Marketing";
+            this.markCheckBox.UseVisualStyleBackColor = true;
+            // 
             // CvE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 486);
+            this.Controls.Add(this.markCheckBox);
             this.Controls.Add(this.medCheckBox);
             this.Controls.Add(this.finCheckBox);
             this.Controls.Add(this.legCheckBox);
@@ -109,6 +122,7 @@
         private System.Windows.Forms.CheckBox legCheckBox;
         private System.Windows.Forms.CheckBox finCheckBox;
         private System.Windows.Forms.CheckBox medCheckBox;
+        private System.Windows.Forms.CheckBox markCheckBox;
 
     }
 }

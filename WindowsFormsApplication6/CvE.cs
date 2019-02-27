@@ -12,6 +12,10 @@ namespace CvEv3
 {
     public partial class CvE : Form
     {
+        //to do
+        //working Checboxes
+        //randomize how many docs are displayed and limit to 3
+        //randomize how many domains are displayed and limit to 3
         Random Rand = new Random();
         string text = "";
         string field = "";
@@ -19,20 +23,46 @@ namespace CvEv3
         string[] legDoc = { "contracts", "bylaws", "directives" };
         string[] finDoc = { "annual reports", "balance sheets" };
         string[] medDoc = { "SPC's", "PIL's", "clinical trials" };
+        bool chkdBoxes = false;
+        
+ 
         public CvE()
         {
             InitializeComponent();
+            
         }
         public string domainRandomizer()
         {
             string randomDomain = domain[Rand.Next(0, domain.Length)];
             return randomDomain;
         }
-        public string docRandomizer(string[] docList)
+
+
+
+        public string selectedDomains()
+        {
+            Dictionary<string[],bool> boxesNdocs = new Dictionary<string[], bool>();
+            boxesNdocs.Add(legDoc, legCheckBox.Checked);
+            boxesNdocs.Add(finDoc, finCheckBox.Checked);
+            boxesNdocs.Add(medDoc, medCheckBox.Checked);
+
+            string selectedText = "";
+            foreach (KeyValuePair<string[], bool> entry in boxesNdocs)
+            {
+                if (entry.Value == true)
+                {
+                   chkdBoxes = true;
+                   selectedText = docRandomizer(entry.Key);
+                }
+            }
+            return selectedText;
+        }
+
+        public string docRandomizer(string[] docList) //randomizes docs
         {
             int i = 0;
             string randomDocList = "";
-            while (i < 3)
+            while (i < docList.Length)
             {
                 i = i + 1;
                 string randomDoc = docList[Rand.Next(0, docList.Length)];
@@ -64,6 +94,7 @@ namespace CvEv3
             {
                 if (text.Contains(entry.Key)){
                     text = (text + docRandomizer(entry.Value));
+                    break;
                 }
             }
             return text;
@@ -89,22 +120,24 @@ namespace CvEv3
             }
             return finalText;
         }
-        public string domainSelector()
+
+        private string SelectOrRandomizeDomains()
         {
-            if (legCheckBox.Checked)
-            {
-                text = domain[0] + docRandomizer(legDoc);
+            selectedDomains();
+            if (chkdBoxes == true){
+                return selectedDomains();
             }
             else
             {
-                text = enhanceExp();
+                return enhanceExp();
             }
-            return text;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = domainSelector();
+            richTextBox1.Text = SelectOrRandomizeDomains();
+
         }
     }
 }
